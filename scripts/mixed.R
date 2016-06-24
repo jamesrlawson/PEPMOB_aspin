@@ -3,24 +3,24 @@ require(lme4)
 ?lme
 
 
-mod <- lmer(log10gs ~ HSPs * temp_treatment + (1|time) + (1|species), data = phys_prot, REML=FALSE)
+mod <- lmer(log10gs ~ HSPs_protein * temp_treatment + (1|time) + (1|species), data = phys_prot, REML=FALSE)
 summary(mod)
 
-mod1 <- lmer(log10gs ~ HSPs + temp_treatment + (1|time) + (1|species), data = phys_prot, REML=FALSE)
+mod1 <- lmer(log10gs ~ HSPs_protein + temp_treatment + (1|time) + (1|species), data = phys_prot, REML=FALSE)
 summary(mod1)
 
-mod2 <- lmer(log10gs ~ HSPs + temp_treatment + (1|species), data = phys_prot, REML=FALSE)
+mod2 <- lmer(log10gs ~ HSPs_protein + temp_treatment + (1|species), data = phys_prot, REML=FALSE)
 summary(mod2)
 
-mod3 <- lmer(log10gs ~ HSPs + temp_treatment + (1|time), data = phys_prot, REML=FALSE)
+mod3 <- lmer(log10gs ~ HSPs_protein + temp_treatment + (1|time), data = phys_prot, REML=FALSE)
 summary(mod3)
 
-mod4 <- lmer(log10gs ~ HSPs + temp_treatment + (temp_treatment|species) + (1|time), data = phys_prot, REML=FALSE)
+mod4 <- lmer(log10gs ~ HSPs_protein + temp_treatment + (temp_treatment|species) + (1|time), data = phys_prot, REML=FALSE)
 summary(mod4)
 
-mod5 <- lmer(log10gs ~ HSPs + temp_treatment + (1|species) + (temp_treatment|time), data = phys_prot, REML=FALSE)
+mod5 <- lmer(log10gs ~ HSPs_protein + temp_treatment + (1|species) + (temp_treatment|time), data = phys_prot, REML=FALSE)
 
-mod6 <-  lmer(log10gs ~ HSPs + temp_treatment + (temp_treatment|species), data = phys_prot, REML=FALSE)
+mod6 <-  lmer(log10gs ~ HSPs_protein + temp_treatment + (temp_treatment|species), data = phys_prot, REML=FALSE)
   
   
 AIC(mod,mod1,mod2,mod3,mod4,mod5,mod6)

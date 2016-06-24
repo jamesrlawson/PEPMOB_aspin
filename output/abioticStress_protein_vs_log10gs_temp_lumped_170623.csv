@@ -1,0 +1,17 @@
+"","submodel","R2","pval","p.adj"
+"heatwave-euccam-","heatwave-euccam-",0.155,0.44069,0.7051
+"post_1day-euccam-","post_1day-euccam-",0.501,0.11577,0.36648
+"post_6day-euccam-","post_6day-euccam-",0.396,0.18068,0.41298
+"pre_heatwave-euccam-","pre_heatwave-euccam-",0.037,0.71501,0.8831
+"heatwave-eucbot-","heatwave-eucbot-",0.58,0.078507,0.36648
+"post_1day-eucbot-","post_1day-eucbot-",0.626,0.060955,0.36648
+"post_6day-eucbot-","post_6day-eucbot-",0.851,0.0087296,0.13967
+"pre_heatwave-eucbot-","pre_heatwave-eucbot-",0.544,0.094496,0.36648
+"heatwave-eucter-","heatwave-eucter-",0.00147,0.94258,0.94258
+"post_1day-eucter-","post_1day-eucter-",0.0582,0.6959,0.8831
+"post_6day-eucter-","post_6day-eucter-",0.229,0.33726,0.59957
+"pre_heatwave-eucter-","pre_heatwave-eucter-",0.462,0.13743,0.36648
+"heatwave-eucsmi-","heatwave-eucsmi-",0.0501,0.71752,0.8831
+"post_1day-eucsmi-","post_1day-eucsmi-",0.0036,0.92367,0.94258
+"post_6day-eucsmi-","post_6day-eucsmi-",0.0299,0.78081,0.89235
+"pre_heatwave-eucsmi-","pre_heatwave-eucsmi-",0.321,0.31933,0.59957

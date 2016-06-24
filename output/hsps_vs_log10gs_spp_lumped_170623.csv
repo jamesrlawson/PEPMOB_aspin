@@ -1,0 +1,9 @@
+"","submodel","R2","pval","p.adj"
+"heatwave-home-","heatwave-home-",0.465,0.014592,0.058366
+"post_1day-home-","post_1day-home-",0.327,0.05214,0.10428
+"post_6day-home-","post_6day-home-",0.396,0.028308,0.075488
+"pre_heatwave-home-","pre_heatwave-home-",0.00444,0.83691,0.83691
+"heatwave-warm-","heatwave-warm-",0.00813,0.79205,0.83691
+"post_1day-warm-","post_1day-warm-",0.069,0.46352,0.61802
+"post_6day-warm-","post_6day-warm-",0.231,0.13416,0.21466
+"pre_heatwave-warm-","pre_heatwave-warm-",0.51,0.013574,0.058366
