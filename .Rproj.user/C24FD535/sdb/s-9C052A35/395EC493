@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "require(lme4)\n\n?lme\n\n\nmod <- lmer(log10gs ~ HSPs * temp_treatment + (1|time) + (1|species), data = phys_prot, REML=FALSE)\nsummary(mod)\n\nmod1 <- lmer(log10gs ~ HSPs + temp_treatment + (1|time) + (1|species), data = phys_prot, REML=FALSE)\nsummary(mod1)\n\nmod2 <- lmer(log10gs ~ HSPs + temp_treatment + (1|species), data = phys_prot, REML=FALSE)\nsummary(mod2)\n\nmod3 <- lmer(log10gs ~ HSPs + temp_treatment + (1|time), data = phys_prot, REML=FALSE)\nsummary(mod3)\n\nmod4 <- lmer(log10gs ~ HSPs + temp_treatment + (temp_treatment|species) + (1|time), data = phys_prot, REML=FALSE)\nsummary(mod4)\n\nmod5 <- lmer(log10gs ~ HSPs + temp_treatment + (1|species) + (temp_treatment|time), data = phys_prot, REML=FALSE)\n\nmod6 <-  lmer(log10gs ~ HSPs + temp_treatment + (temp_treatment|species), data = phys_prot, REML=FALSE)\n  \n  \nAIC(mod,mod1,mod2,mod3,mod4,mod5,mod6)\n\nanova(mod,mod1) # protein/temp treatment interaction is not significant\nanova(mod1,mod2) # time has significant effect\nanova(mod1,mod3) # species has significant effect\nanova(mod1,mod4) # sig\nanova(mod3,mod4) # highly sig\nanova(mod1,mod5) # sig\nanova(mod4,mod5) # no diff\nanova(mod4,mod6) # time itself not important\n",
+    "created" : 1466731271186.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "880527234",
+    "id" : "395EC493",
+    "lastKnownWriteTime" : 1466738685,
+    "last_content_update" : 1466738685374,
+    "path" : "C:/Users/James/Desktop/stuff/PEPMOB/Aspinwall/scripts/mixed.R",
+    "project_path" : "scripts/mixed.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

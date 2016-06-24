@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1466734242990.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BD618E03",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1466734242990,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "grb7xoql6l",
+        "caption" : "temp_spp_lumped_HSPs",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=temp_spp_lumped_HSPs&cache_key=grb7xoql6l",
+        "displayedObservations" : 4,
+        "environment" : "",
+        "object" : "temp_spp_lumped_HSPs",
+        "totalObservations" : 4,
+        "variables" : 4
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

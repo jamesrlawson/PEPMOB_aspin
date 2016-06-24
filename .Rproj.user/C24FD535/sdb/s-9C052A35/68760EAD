@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\nregression_output <- function(df, split, x, y, z) { \n  \n  # split is a vector of factors for df to be split by, can have up to three elements\n  # x is the dependent variable\n  # y is the independent variable\n  # z is an interaction term\n  \n  x <- deparse(substitute(x))\n  y <- deparse(substitute(y))\n  z <- deparse(substitute(z))\n  \n  df$species_time_comb <- paste(as.character(df[[split[1]]]), df[[split[2]]], as.character(df[[split[3]]]), sep = \"-\")\n  \n  a <- data.frame()\n  my.list <- vector(\"list\", length(unique(df$species_time_comb)))\n  \n  for(i in 1:length(unique(df$species_time_comb))) {\n    sub <- unique(df$species_time_comb)[i]\n    df_sub <- subset(df, species_time_comb == sub)\n    \n    model <- lm(paste(y, '~', x, sep = \"\"), data = df_sub)\n    \n    model.stats <-  data.frame(cbind(sub,summary(model)$r.squared, summary(model)$coefficients[,4][2]))\n    names(model.stats) <- c('submodel','R2','pval') \n    rownames(model.stats) <- unique(df$species_time_comb)[i]\n    \n    my.list[[i]] <- model.stats\n    \n  }\n  \n  a <- rbind(a, do.call(rbind, my.list))\n  a$p.adj <- p.adjust(as.numeric(as.character(a$pval)), method = \"BH\")\n  \n  a$R2 <- as.numeric(as.character(a$R2))\n  a$pval <- as.numeric(as.character(a$pval))\n  a$p.adj <- as.numeric(as.character(a$p.adj))\n  a$submodel <- as.character(a$submodel)\n  \n  return(a)\n  \n}\n\n\n\n",
+    "created" : 1466660103496.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2216215871",
+    "id" : "68760EAD",
+    "lastKnownWriteTime" : 1466738654,
+    "last_content_update" : 1466738654686,
+    "path" : "C:/Users/James/Desktop/stuff/PEPMOB/Aspinwall/scripts/regression_outputs.R",
+    "project_path" : "scripts/regression_outputs.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

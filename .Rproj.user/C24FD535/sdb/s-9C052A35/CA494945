@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "regression <- regression_output(phys_prot, c('time'), HSPs, log10gs)\nplot_panel(phys_prot, c('time'), HSPs, log10gs)",
+    "created" : 1466738642626.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "918633608",
+    "id" : "CA494945",
+    "lastKnownWriteTime" : 1466738467,
+    "last_content_update" : 1466738644745,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "require(gridExtra)\n\nplot_panel <- function(df, split, x, y, z, ...) {\n\n  # split is a vector of factors for df to be split by, can have up to three elements\n  # x is the dependent variable\n  # y is the independent variable\n  # z is an interaction term  \n  \n  x <- deparse(substitute(x))\n  y <- deparse(substitute(y))\n  z <- deparse(substitute(z))\n  \n#regression <- regression_output(df, split, x, y, z)\n\ndf$species_time_comb <- paste(as.character(df[[split[1]]]), df[[split[2]]], as.character(df[[split[3]]]), sep = \"-\")\n\nplt <-  ggplot(phys_prot, aes_string(x=x,y=y)) +\n        geom_point(size = 2, aes(color=species, shape = temp_treatment)) +\n      #  geom_smooth(method=lm,se=FALSE) +\n        geom_smooth(data=df[df$species_time_comb %in% regression[regression$pval < 0.05,]$submodel,], \n                   aes_string(x=x, y=y), method='lm', se=FALSE, size = 0.5, color = 'black') +\n        scale_colour_hue(l=50) +  # Use a slightly darker palette than normal)\n        facet_grid(. ~ time, scales = \"free_x\") +\n        ylab('Heat Shock Protein (mg / m2)') +\n        xlab('log10(Gs) (mmol H20 / s / m2)') \n\ntt <- ttheme_default(colhead=list(fg_params = list(parse=TRUE)))\ntbl <- tableGrob(regression, rows=NULL, theme=tt)\n# Plot chart and table into one object\ngrid.arrange(plt, tbl,\n             nrow=2,\n             as.table=TRUE,\n             heights=c(3,1))\n}\n\nregression <- regression_output(phys_prot, c('time'), HSPs, log10gs)\nplot_panel(phys_prot, c('time'), HSPs, log10gs)\n\n\n\n\n",
+    "created" : 1466734119879.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4008623443",
+    "id" : "FAF111A8",
+    "lastKnownWriteTime" : 1466738669,
+    "last_content_update" : 1466738669943,
+    "path" : "C:/Users/James/Desktop/stuff/PEPMOB/Aspinwall/scripts/plot_panel.R",
+    "project_path" : "scripts/plot_panel.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
